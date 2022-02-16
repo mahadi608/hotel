@@ -1,5 +1,5 @@
 <?php 
-require('config.php');
+require('connection.php');
 extract($_REQUEST);
 if(isset($login))
 {
@@ -9,7 +9,7 @@ if(isset($login))
   }   
   else
   {
-  $sql=mysqli_query($conn,"select * from login where email='$eid' && password='$pass' ");
+  $sql=mysqli_query($conn,"select * from create_account where email='$eid' && password='$pass' ");
     if(mysqli_num_rows($sql))
     {
     $_SESSION['create_account_logged_in']=$eid;  
@@ -47,7 +47,7 @@ mysqli_close($conn);
                   <li><a href="#">ABOUT</a></li>
                   <li><a href="#">SERVICE</a></li>
                   <li><a href="#">CONTACT</a></li>
-                  <li><a href="login.html">
+                  <li><a href="signup.php">
                     <button class="btn">SIGNUP</button>
                      </a>
                   </li>
