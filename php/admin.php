@@ -9,7 +9,7 @@ if(isset($login))
   }   
   else
   {
-  $sql=mysqli_query($conn,"select * from create_account where email='$eid' && password='$pass' ");
+  $sql=mysqli_query($conn,"select * from admin where username='$eid' && password='$pass' ");
     if(mysqli_num_rows($sql))
     {
     $_SESSION['create_account_logged_in']=$eid;  
@@ -35,26 +35,11 @@ mysqli_close($conn);
 </head>
 <body>
 <div class="hero_in">
-      <div class="navbar">
-          <div class="icon">
-              <a href="../index.html">
-                  <h2 class="logo">BlueStar</h2>
-              </a>
-          </div>
-          <div class="menu">
-              <ul>
-                  <li><a href="../index.html">HOME</a></li>
-                  <li><a href="#">ABOUT</a></li>
-                  <li><a href="#">SERVICE</a></li>
-                  <li><a href="#">CONTACT</a></li>
-                  <li><a href="signup.php">
-                    <button class="btn">SIGNUP</button>
-                     </a>
-                  </li>
-              </ul>
-          </div>
-      </div>
   <div class="container">
+      <div class="admin">
+          <br>
+          <h2>Admin Login</h2>
+      </div>
     <div class="row">
       <br>
           <?php echo @$error; ?>

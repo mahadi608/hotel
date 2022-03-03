@@ -1,24 +1,25 @@
 <?php
 include('connection.php');
 extract($_REQUEST);
-if(isset($save))
+if($_SERVER["REQUEST_METHOD"] == "POST")
 {
   $sql= mysqli_query($conn,"select * from create_account where email='$email' ");
   if(mysqli_num_rows($sql))
   {
-  $msg= "<h1 style='color:red'> account already exists</h1>";    
+  $msg= "<h2 style='color:red'> account already exists</h2>";    
   }
   else
   {
 
-      $sql="insert into create_account(name,email,password,mobile,address,gender,country) values('$name','$email','$pass','$mobil','$addr','$gend','$contr')";
+      $sql="insert into create_account(name,email,password,mobile,address,gender,country) 
+             values('$name','$email','$pass','$mobil','$addr','$gend','$contr')";
    if(mysqli_query($conn,$sql))
    {
-   $msg= "<h1 style='color:green'>Data Saved Successfully</h1>"; 
-   header('location:login.php'); 
+   $msg= "<h2 style='color:green'>Signup Successfully</h2>";
    }
   }
 }
+mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +34,7 @@ if(isset($save))
 <div class="hero_in">
       <div class="navbar">
           <div class="icon">
-              <a href="#">
+              <a href="../index.html">
                   <h2 class="logo">BlueStar</h2>
               </a>
           </div>
