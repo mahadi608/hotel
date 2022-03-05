@@ -1,42 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <style>
-        table,
-        td,
-        th {
-            border: 1px solid;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: center;
-        }
-
-        button {
-            background-color: red;
-            width: 100px;
-            height: 30px;
-        }
-
-        .update {
-            background-color: green;
-            width: 100px;
-            height: 30px;
-        }
-
-        a {
-            text-decoration: none;
-            color: #fff;
-        }
-    </style>
-</head>
-
-<body>
-
-    <?php
+<?php
     require('connection.php');
 
     $sql = "select * from create_account ";
@@ -47,12 +9,12 @@
     <tr>
     <th>ID</th>
     <th>Name</th>
-    <th>email</th>
-    <th>mobile</th>
-    <th>address</th>
-    <th>gender</th>
-    <th>country</th>
-    <th colspan=2>operation</th>
+    <th>Email</th>
+    <th>Mobile</th>
+    <th>Address</th>
+    <th>Gender</th>
+    <th>Country</th>
+    <th colspan=2>Operation</th>
     </tr>";
         // output data of each row
         while ($row = $result->fetch_assoc()) {
@@ -82,7 +44,3 @@
 
     $conn->close();
     ?>
-
-</body>
-
-</html>

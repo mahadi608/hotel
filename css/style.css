@@ -149,3 +149,15 @@ ul li a:hover {
     color: #fff;
     text-decoration: none;
 }
+
+@media screen and (max-width: 600px) {
+    .navbar a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    
+    .icon {
+      float: none;
+    }
+  }
