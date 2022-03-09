@@ -14,7 +14,48 @@
         </div>
         <div class="data">
             <h2> <u>ALL PRICE INFORMATION</u> </h2><br>
-        
+
+            <?php
+            require('connection.php');
+
+            $sql = "select * from rooms";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                echo "<table cellpadding=7 cellspacing=7>
+                <tr>
+                <th>Room_ID</th>
+                <th>Room_No</th>
+                <th>Type</th>
+                <th>price</th>
+                <th colspan=2>Operation</th>
+                </tr>";
+
+                // output data of each row
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>
+        <td>" . $row["id"] . "</td>
+        <td>" . $row["room_no"] . "</td>
+        <td>" . $row["type"] . "</td>
+        <td>" . $row["price"] . "</td>
+        <td>
+        <button><a href='delete.php?id=$row[id] & table=rooms'>DELETE </a></button>
+        </td>
+        <td>
+        <button class=update>
+        <a href='update.php?id=$row[id] & name=$row[room_no] & email=$row[type] & mobile=$row[details] '>UPDATE</a>
+        </button>
+        </td>
+        </tr>";
+                }
+                echo "</table>";
+            } else {
+                echo "0 results";
+            }
+
+            $conn->close();
+            ?>
+
         </div>
     </div>
 
