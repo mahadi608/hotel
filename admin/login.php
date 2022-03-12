@@ -13,7 +13,7 @@ if(isset($login))
     if(mysqli_num_rows($sql))
     {
     $_SESSION['create_account_logged_in']=$eid;  
-    header('location:welcome.php'); 
+    header('location:report.php'); 
     }
     else
     {
