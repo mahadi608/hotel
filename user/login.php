@@ -1,4 +1,7 @@
 <?php 
+session_start();
+error_reporting(1);
+
 require('connection.php');
 extract($_REQUEST);
 if(isset($login))

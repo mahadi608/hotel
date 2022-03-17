@@ -27,7 +27,7 @@
         <td>" . $row["gender"] . "</td>
         <td>" . $row["country"] . "</td>
         <td>
-        <button><a href='delete.php?id=$row[id] & table=create_account'>DELETE </a></button>
+        <button><a href='delete.php?id=$row[id] & table=create_account & page=userdatashow.php'>DELETE </a></button>
         </td>
         <td>
         <button class=update>

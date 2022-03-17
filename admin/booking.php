@@ -25,9 +25,7 @@
                 echo "<table cellpadding=7 cellspacing=7>
     <tr>
     <th>ID</th>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Mobile</th>
+    <th>CustomerID</th>
     <th>room_type</th>
     <th>check_in_date</th>
     <th>check_in_time</th>
@@ -39,9 +37,7 @@
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>
         <td>" . $row["id"] . "</td>
-        <td>" . $row["name"] . "</td>
-        <td>" . $row["email"] . "</td>
-        <td>" . $row["phone"] . "</td>
+        <td>" . $row["CustomerID"] . "</td>
         <td>" . $row["room_type"] . "</td>
         <td>" . $row["check_in_date"] . "</td>
         <td>" . $row["check_in_time"] . "</td>
