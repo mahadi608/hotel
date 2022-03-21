@@ -34,13 +34,13 @@ mysqli_close($conn);
 <div class="hero_in">
       <div class="navbar">
           <div class="icon">
-              <a href="../index.html">
+              <a href="../index.php">
                   <h2 class="logo">BlueStar</h2>
               </a>
           </div>
           <div class="menu">
               <ul>
-                  <li><a href="../index.html">HOME</a></li>
+                  <li><a href="../index.php">HOME</a></li>
                   <li><a href="#">ABOUT</a></li>
                   <li><a href="#">SERVICE</a></li>
                   <li><a href="#">CONTACT</a></li>

@@ -1,5 +1,6 @@
 <?php 
 session_start();
-$_SESSION['create_account_logged_in']=$eid;  
-header('location:../index.html'); 
+unset($_SESSION['create_account_logged_in']); 
+unset($_SESSION['logged']);
+header('location:../index.php'); 
 ?>

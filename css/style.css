@@ -150,6 +150,52 @@ ul li a:hover {
     text-decoration: none;
 }
 
+.dropbtn {
+    height: 40px;
+    width: 100px;
+    background: #ff7200;
+    border: 2px solid #ff7200;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 200;
+    border-radius: 5px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+.dropbtn:hover {
+    color: #000;
+}
+
+.dropbtn:focus {
+    outline: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 2px;
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown:hover .dropdown-content {display: block;}
+
+h4{
+    margin: 20px;
+}
+
 @media screen and (max-width: 600px) {
     .navbar a {
       float: none;

@@ -1,18 +1,15 @@
 <?php
+session_start();
 include('connection.php');
+$eid = $_SESSION['create_account_logged_in'];
 extract($_REQUEST);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $sql = mysqli_query($conn, "select * from create_account where email='$email' ");
-    if (mysqli_num_rows($sql)) {
-        $msg = "<h2 style='color:red'> account already exists</h2>";
-    } else {
-
-        $sql = "insert into create_account(name,email,password,mobile,address,gender,country) 
-             values('$name','$email','$pass','$mobil','$addr','$gend','$contr')";
+    $sql = "INSERT INTO room_booking_details (Email, room_type, check_in_date, check_in_time, check_out_date, Occupancy) 
+                VALUES ('$eid', '$room_type', '$cdate', '$ctime', '$codate', '$Occupancy');";
         if (mysqli_query($conn, $sql)) {
-            $msg = "<h2 style='color:green'>Signup Successfully</h2>";
+            header('location:order.php');
         }
-    }
+    
 }
 mysqli_close($conn);
 ?>
@@ -29,28 +26,16 @@ mysqli_close($conn);
 
 <body>
     <div class="hero_in">
-        <div class="navbar">
-            <div class="icon">
-                <a href="../index.html">
-                    <h2 class="logo">BlueStar</h2>
-                </a>
-            </div>
-            <div class="menu">
-                <ul>
-                    <li><a href="logout.php">
-                            <button class="btn">Log Out</button>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+      <?php
+      require 'header.php';
+      ?>
         <div class="container">
             <div class="row">
                 <br>
                 <?php echo @$msg; ?>
                 <form method="post" class="form">
                     <h4>Room Type:</h4>
-                    <div class="col-sm-7">
+                    <div class="col">
                         <select class="form-control" name="room_type" required>
                             <option>Deluxe Room</option>
                             <option>Luxurious Suite</option>
@@ -60,19 +45,19 @@ mysqli_close($conn);
                         </select>
                     </div>
                     <h4>check In Date :</h4>
-                    <div class="col-sm-7">
+                    <div class="col">
                         <input type="date" name="cdate" class="form-control" required>
                     </div>
                     <h4>Check In Time:</h4>
-                    <div class="col-sm-7">
+                    <div class="col">
                     <input type="time" name="ctime" class="form-control"required>
                   </div>
                   <h4>Check Out Date :</h4>
-                  <div class="col-sm-7">
+                  <div class="col">
                   <input type="date" name="codate" class="form-control"required>
                 </div>
                 <h4 id="top">Occupancy :</h4>
-                <div class="col-sm-7">
+                <div class="col">
                   <div class="radio-inline"><input type="radio" value="single" name="Occupancy"required >Single</div>
                   <div class="radio-inline"><input type="radio" value="twin" name="Occupancy" required>Twin</div>
                   <div class="radio-inline"><input type="radio" value="dubble" name="Occupancy" required>Dubble</div>

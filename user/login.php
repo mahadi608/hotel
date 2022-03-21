@@ -15,8 +15,9 @@ if(isset($login))
   $sql=mysqli_query($conn,"select * from create_account where email='$eid' && password='$pass' ");
     if(mysqli_num_rows($sql))
     {
-    $_SESSION['create_account_logged_in']=$eid;  
-    header('location:welcome.php'); 
+    $_SESSION['create_account_logged_in']=$eid; 
+    $_SESSION['logged']=true;
+    header('location:../index.php'); 
     }
     else
     {
@@ -40,13 +41,13 @@ mysqli_close($conn);
 <div class="hero_in">
       <div class="navbar">
           <div class="icon">
-              <a href="../index.html">
+              <a href="../index.php">
                   <h2 class="logo">BlueStar</h2>
               </a>
           </div>
           <div class="menu">
               <ul>
-                  <li><a href="../index.html">HOME</a></li>
+                  <li><a href="../index.php">HOME</a></li>
                   <li><a href="#">ABOUT</a></li>
                   <li><a href="#">SERVICE</a></li>
                   <li><a href="#">CONTACT</a></li>
