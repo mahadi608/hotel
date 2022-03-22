@@ -43,7 +43,7 @@
         </td>
         <td>
         <button class=update>
-        <a href='update.php?id=$row[id] & name=$row[room_no] & email=$row[type] & mobile=$row[details]'>UPDATE</a>
+        <a href='roomupdate.php?id=$row[id] & room=$row[room_no] & type=$row[type] & details=$row[details]'>UPDATE</a>
         </button>
         </td>
         </tr>";

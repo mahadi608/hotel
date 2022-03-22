@@ -21,10 +21,17 @@
       <a href="user/booking.php" class="btnn">Book Now</a>
     </div>
   </div>
+  <section>
+    <?php
+    include 'feedback.php';
+    ?>
+  </section>
   <footer>
-    <p style="text-align: center;">Author: Mehedi Hasan<br>
+    <div class="footer">
+    <p >Author: Mehedi Hasan<br>
       <a href="mailto:hege@example.com">admin@example.com</a>
     </p>
+    </div>
   </footer>
 </body>
 

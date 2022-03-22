@@ -1,4 +1,5 @@
-<?php 
+<?php
+session_start(); 
 require('connection.php');
 extract($_REQUEST);
 if(isset($login))
@@ -12,7 +13,8 @@ if(isset($login))
   $sql=mysqli_query($conn,"select * from admin where username='$eid' && password='$pass' ");
     if(mysqli_num_rows($sql))
     {
-    $_SESSION['create_account_logged_in']=$eid;  
+    $_SESSION['email_logged_in']=$eid;
+    $_SESSION['pass_logged_in']=$pass;
     header('location:report.php'); 
     }
     else

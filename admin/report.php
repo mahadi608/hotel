@@ -29,23 +29,37 @@
     <div class="main">
         <div class="menu">
             <?php
+            require('connection.php');
             require "sidebar.php";
-            ?>
-        </div>
+            
+       echo '</div>
         <div class="data">
             <h2> <u>ALL REPORT INFORMATION</u> </h2><br>
 
             <div class="row">
                 <div class="card-01">
-                    <h2>Total User</h2><h2>75</h2>
-                </div>
+                    <h2>Total User</h2>';
+                    
+                     $sql=mysqli_query($conn,"select * from create_account");
+                     $row=mysqli_num_rows($sql);
+                     echo '<h2> '.$row.' </h2>
+                    
+                  </div>
                 <div class="card-01">
-                <h2>Total Room</h2><h2>7</h2>
-                </div>
+                <h2>Total Room</h2>';
+                $sql=mysqli_query($conn,"select * from rooms");
+                     $row=mysqli_num_rows($sql);
+                     echo '<h2> '.$row.' </h2>
+
+                  </div>
                 <div class="card-01">
-                <h2>Total Booking</h2><h2>25</h2>
+                <h2>Total Booking</h2>';
+                $sql=mysqli_query($conn,"select * from room_booking_details");
+                     $row=mysqli_num_rows($sql);
+                     echo '<h2> '.$row.' </h2>
                 </div>
-            </div>
+            </div>'
+            ?>
 
         </div>
     </div>

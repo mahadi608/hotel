@@ -38,6 +38,10 @@
             <li>
                 <a href="setting.php">Setting</a>
             </li>
+            <hr>
+            <li>
+                <a href="logout.php">Logout</a>
+            </li>
         </ul>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

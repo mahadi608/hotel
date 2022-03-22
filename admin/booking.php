@@ -25,7 +25,7 @@
                 echo "<table cellpadding=7 cellspacing=7>
     <tr>
     <th>ID</th>
-    <th>CustomerID</th>
+    <th>Email</th>
     <th>room_type</th>
     <th>check_in_date</th>
     <th>check_in_time</th>
@@ -37,18 +37,19 @@
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>
         <td>" . $row["id"] . "</td>
-        <td>" . $row["CustomerID"] . "</td>
+        <td>" . $row["Email"] . "</td>
         <td>" . $row["room_type"] . "</td>
         <td>" . $row["check_in_date"] . "</td>
         <td>" . $row["check_in_time"] . "</td>
         <td>" . $row["check_out_date"] . "</td>
         <td>" . $row["Occupancy"] . "</td>
         <td>
-        <button><a href='delete.php?id=$row[id] & table=create_account'>DELETE </a></button>
+        <button><a href='delete.php?id=$row[id] & table=room_booking_details & page=booking.php'>DELETE </a></button>
         </td>
         <td>
         <button class=update>
-        <a href='update.php?id=$row[id]'>UPDATE</a>
+        <a href='bookingupdate.php?id=$row[id] & email=$row[Email] & room_type=$row[room_type] &
+         check_in_date= $row[check_in_date] & check_in_time=$row[check_in_time] & check_out_date=$row[check_out_date] & Occupancy=$row[Occupancy]'>UPDATE</a>
         </button>
         </td>
         </tr>";
