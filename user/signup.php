@@ -6,7 +6,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   $sql= mysqli_query($conn,"select * from create_account where email='$email' ");
   if(mysqli_num_rows($sql))
   {
-  $msg= "<h2 style='color:red'> account already exists</h2>";    
+   $msg= "<h2 style='color:red'> account already exists</h2>";
+  
   }
   else
   {
@@ -15,7 +16,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
              values('$name','$email','$pass','$mobil','$addr','$gend','$contr')";
    if(mysqli_query($conn,$sql))
    {
-   $msg= "<h2 style='color:green'>Signup Successfully</h2>";
+  //  $msg= "<h2 style='color:green'>Signup Successfully</h2>";
+   header('location:login.php');
    }
   }
 }
